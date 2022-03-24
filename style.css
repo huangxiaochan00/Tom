@@ -3,17 +3,27 @@
     margin: 0;
     box-sizing: border-box;
 }
-#cat,body,html{
-    height: 100%;
-}
+
 .Tom{
+    width:fit-content;
     position: relative;
+    margin: 0 auto;
+}
+@media screen and (max-width:600px){
+    .Tom{
+        width: 100%;
+        position: relative;
+    }
+    #cat{
+        width: 100%;
+        height: auto;
+    }
 }
 ul{
     list-style: none;
 }
-.Tom>img{
-    width: 100%;
+#cat{
+    height: 99vh;
 }
 .buttons-left{
     top:60%;
@@ -23,4 +33,39 @@ ul{
     top:60%;
     position: absolute;
     right: 0%;
+}
+#angry{
+    width: 15vw;
+    height: 8vh;
+    position: absolute;
+    top:30%;
+    left: 43%;
+}
+#head{
+    width: 40vw;
+    height: 8vh;
+    position: absolute;
+    top:15%;
+    left: 33%;
+}
+#stomach{
+    width: 35vw;
+    height: 8vh;
+    position: absolute;
+    top:75%;
+    left: 33%;
+}
+#footLeft{
+    width: 15vw;
+    height: 8vh;
+    position: absolute;
+    top:90%;
+    left: 33%;
+}
+#footRight{
+    width: 15vw;
+    height: 8vh;
+    position: absolute;
+    top:90%;
+    left: 53%;
 }

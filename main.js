@@ -4,39 +4,14 @@ let pie = document.querySelector("#pie")
 let cymbal = document.querySelector("#cymbal")
 let scratch = document.querySelector("#scratch")
 let fart = document.querySelector("#fart")
-let cat = document.querySelector("#cat")
 let music = document.querySelector("#music")
+let angry = document.querySelector("#angry")
+let head = document.querySelector("#head")
+let footLeft = document.querySelector("#footLeft")
+let footRight = document.querySelector("#footRight")
+let stomach = document.querySelector("#stomach")
 var setId
 
-cat.onclick = (e) => {
-    if (330 < e.screenY && e.screenY < 400 && e.screenX > 300 & e.screenX < 430) {
-        start('angry', 26)
-        music.src = "./mp3/angry.wav";
-        music.play()
-    } else if (580 < e.screenY && e.screenY < 630 && e.screenX > 300 & e.screenX < 360) {
-        start('footRight', 30)
-        music.src = "./mp3/p_noo.wav";
-        music.play()
-    } else if (580 < e.screenY && e.screenY < 630 && e.screenX > 360 & e.screenX < 430) {
-        start('footLeft', 30)
-        music.src = "./mp3/p_foot4.wav";
-        music.play()
-    } else if (500 < e.screenY && e.screenY < 600 && e.screenX > 320 & e.screenX < 420) {
-        start('stomach', 34)
-        music.src = "./mp3/p_belly1.wav";
-        music.play()
-    } else if (250 < e.screenY && e.screenY < 300 && e.screenX > 210 & e.screenX < 400) {
-        start('knockout', 81)
-        music.src = "./mp3/p_meuu.wav"
-        music.play()
-    }
-    // console.log(e.screenY);
-    //生气 x:300-430 y:330-400
-    //左脚 x:300-360 y:530-630
-    //右脚 x:360-430 y:530-630
-    //肚子：x:320-420 y:520-600
-    //敲打  x:210-400 y:250-300
-}
 function imgIndex(index) {
     if (index < 10) {
         return '0' + index
@@ -60,6 +35,33 @@ function start(action, count) {
             clearInterval(setId)
         }
     }, 80);
+
+}
+footLeft.onclick = () => {
+    start('footRight', 30)
+    music.src = "./mp3/p_noo.wav";
+    music.play()
+}
+footRight.onclick = () => {
+
+    start('footLeft', 30)
+    music.src = "./mp3/p_foot4.wav";
+    music.play()
+}
+stomach.onclick = () => {
+    start('stomach', 34)
+    music.src = "./mp3/p_belly1.wav";
+    music.play()
+}
+angry.onclick = () => {
+    start('angry', 26)
+    music.src = "./mp3/angry.wav";
+    music.play()
+}
+head.onclick = () => {
+    start('knockout', 81)
+    music.src = "./mp3/p_meuu.wav"
+    music.play()
 
 }
 eat.onclick = () => {
